@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1,user-scalable=no">
+    <title>studio.w</title>
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--icon-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--chart-->
+    <link rel="stylesheet" type="text/css" href="path/to/chartjs/dist/Chart.min.css">
+
+</head>
+
+<body>
+    <div class="warp">
+        <div class="header">
+            <div class="profile">
+                <div class="profile-img">
+                    <img src="http://www.tvj.co.kr/news/photo/201603/31313_43222_2735.jpg" alt="">
+                </div>
+                <div class="profile-name">
+                    <h3>Studio.W</h3>
+                </div>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="검색" name="search">
+                <button type="submit"><i class="material-icons">search</i></button>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li>
+                        <a href="#" class="menu-hover"><i class="material-icons">dashboard</i>대시보드</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="material-icons">assignment_ind</i>판매자정보</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="material-icons">local_library</i>작가관리</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="material-icons">border_color</i>작품관리</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="material-icons">comment</i>리뷰관리</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="material-icons">notifications</i>작품공지관리</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="material-icons">receipt</i>판매관리</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="material-icons">local_atm</i>정산관리</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="material-icons">report_problem</i>패널티관리</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="material-icons">poll</i>통계</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="material-icons">volume_up</i>플랫폼 공지</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="container-wrap">
+                <div class="platform-noti">
+                    <p><span><i class="material-icons">volume_up</i></span><span>[정산공지]</span><span>주말이후 정산안내</span></p>
+                </div>
+                <div class="all-author">
+                    <div class="count-box">
+                        <h3>등록 작가</h3>
+                        <p>3215</p>
+                    </div>
+                    <div class="count-simbol"><i class="material-icons">local_library</i></div>
+                </div>
+                <div class="all-composition">
+                    <div class="count-box">
+                        <h3>등록 작품</h3>
+                        <p>3215</p>
+                    </div>
+                    <div class="count-simbol"><i class="material-icons">border_color</i></div>
+                </div>
+                <div class="composition-view">
+                    <div class="count-box">
+                        <h3>등록 작품 조회수</h3>
+                        <p>10,023,154</p>
+                    </div>
+                    <div class="count-simbol"><i class="material-icons">visibility</i></div>
+                </div>
+                <div class="all-comment">
+                    <div class="count-box">
+                        <h3>등록 리뷰</h3>
+                        <p>12,1234,000</p>
+                    </div>
+                    <div class="count-simbol"><i class="material-icons">comment</i></div>
+                </div>
+                <div class="sales-stats">
+                    <div class="title-area-dash">
+                        <h3>매출통계</h3>
+                        <P>단위(만)<span class="box" style="background-color:#FDC101;"></span >웹툰<span class="box" style="background-color:#013DFD;"></span>웹소설 </P>
+                    </div>
+                    <div class="stats-area">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+                <div class="today-upload">
+                    <div class="title-area-dash">
+                        <h3>오늘 업로드 작품</h3>
+                        <P><span class="f-color" style="color:#013DFD;">등록완료</span >222245<span  class="f-color" style="color:#FD4301">미등록</span>11112 </P>
+                    </div>
+                    <div class="table-area-dash">
+                        <table class="dash-table">
+                            <colgroup>
+                                <col width="15%">
+                                <col width="45%">
+                                <col width="10%">
+                                <col width="10%">
+                                <col width="10%">
+                                <col width="10%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>작가</th>
+                                    <th>제목</th>
+                                    <th>장르</th>
+                                    <th>업로드회차</th>
+                                    <th>업로드시간</th>
+                                    <th>등록상태</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>시야</td>
+                                    <td><a href="#">서브 남주네 기사단장입니다.</a></td>
+                                    <td>웹소설</td>
+                                    <td>161</td>
+                                    <td>18:00</td>
+                                    <td class="fin-color">등록완료</td>
+                                </tr>
+                                <tr>
+                                    <td>서리하</td>
+                                    <td><a href="#">내 남자 주인공을 지키는 방법</a></td>
+                                    <td>웹소설</td>
+                                    <td>160</td>
+                                    <td>18:00</td>
+                                    <td class="loss-color">미등록</td>
+                                </tr>
+                                <tr>
+                                    <td>사과초콜렛</td>
+                                    <td><a href="#">수호성들이 강제로 꽃길을 걷게 한다</a></td>
+                                    <td>웹소설</td>
+                                    <td>129</td>
+                                    <td>18:00</td>
+                                    <td class="fin-color">등록완료</td>
+                                </tr>
+                                <tr>
+                                    <td>고야,이늬</td>
+                                    <td><a href="#">역하렘 게임 속으로 떨어진 모양입니다.</a></td>
+                                    <td>웹소설</td>
+                                    <td>129</td>
+                                    <td>18:00</td>
+                                    <td class="fin-color">등록완료</td>
+                                </tr>
+                                <tr>
+                                    <td>영술사</td>
+                                    <td><a href="#">소설 속 망나니가 되었다</a></td>
+                                    <td>웹소설</td>
+                                    <td>129</td>
+                                    <td>18:00</td>
+                                    <td class="fin-color">등록완료</td>
+                                </tr>
+                                <tr>
+                                    <td>제리엠</td>
+                                    <td><a href="#">얼어붙은 프레이어의 귀환</a></td>
+                                    <td>웹소설</td>
+                                    <td>129</td>
+                                    <td>18:00</td>
+                                    <td class="fin-color">등록완료</td>
+                                </tr>
+                                <tr>
+                                    <td>김수오,자라개</td>
+                                    <td><a href="#">황제엔딩으로 가겠습니다.</a></td>
+                                    <td>웹소설</td>
+                                    <td>129</td>
+                                    <td>18:00</td>
+                                    <td class="fin-color">등록완료</td>
+                                </tr>
+                                <tr>
+                                    <td>별나래 외2</td>
+                                    <td><a href="#">백작가의 망나니가 되었다</a></td>
+                                    <td>웹소설</td>
+                                    <td>129</td>
+                                    <td>18:00</td>
+                                    <td class="fin-color">등록완료</td>
+                                </tr>
+                                <tr>
+                                    <td>누오바</td>
+                                    <td><a href="#">느긋한 공작 부인의 커피하우스</a></td>
+                                    <td>웹소설</td>
+                                    <td>129</td>
+                                    <td>18:00</td>
+                                    <td class="fin-color">등록완료</td>
+                                </tr>
+                                <tr>
+                                    <td>차소희</td>
+                                    <td><a href="#">황녀님이 사악하셔</a></td>
+                                    <td>웹소설</td>
+                                    <td>129</td>
+                                    <td>18:00</td>
+                                    <td class="fin-color">등록완료</td>
+                                </tr>
+                                <tr>
+                                    <td>듀부, 문시현</td>
+                                    <td><a href="#">언니가 남자 주인공을 주워 왔다</a></td>
+                                    <td>웹소설</td>
+                                    <td>129</td>
+                                    <td>18:00</td>
+                                    <td class="fin-color">등록완료</td>
+                                </tr>
+                                <tr>
+                                    <td>윤승기</td>
+                                    <td><a href="#">삼장전</a></td>
+                                    <td>웹소설</td>
+                                    <td>129</td>
+                                    <td>18:00</td>
+                                    <td class="fin-color">등록완료</td>
+                                </tr>
+                                <tr>
+                                    <td>오앤</td>
+                                    <td><a href="#">가짜를 위한 장소는 없다</a></td>
+                                    <td>웹소설</td>
+                                    <td>129</td>
+                                    <td>18:00</td>
+                                    <td class="fin-color">등록완료</td>
+                                </tr>
+                                <tr>
+                                    <td>톄제</td>
+                                    <td><a href="#">랭커를 위한 바른 생활 안내서</a></td>
+                                    <td>웹소설</td>
+                                    <td>129</td>
+                                    <td>18:00</td>
+                                    <td class="fin-color">등록완료</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="today-sales">
+                    <div class="title-area-dash">
+                        <h3>오늘 정산</h3>
+                        <p>단위(만원)</p>
+                    </div>
+                    <div class="count-list-1">
+                        <table class="count-table">
+                            <colgroup>
+                                <col width="30%">
+                                <col width="30%">
+                                <col width="40%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <i class="material-icons" style="color:#013DFD;">edit</i>웹소설
+                                    </th>
+                                    <td><i class="material-icons">visibility</i>15432</td>
+                                    <td>1000만</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="material-icons" style="color:#FDC101;">brush</i>웹툰</th>
+                                    <td><i class="material-icons">visibility</i>12151</td>
+                                    <td>10,000만</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+                <div class="total-sales">
+                    <div class="title-area-dash">
+                        <h3>누적 정산</h3>
+                        <p>단위(만원)</p>
+                    </div>
+                    <div class="count-list-1">
+                        <table class="count-table">
+                            <colgroup>
+                                <col width="30%">
+                                <col width="30%">
+                                <col width="40%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <i class="material-icons" style="color:#013DFD;">edit</i>웹소설
+                                    </th>
+                                    <td><i class="material-icons">visibility</i>15432</td>
+                                    <td>1,001,100만</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="material-icons" style="color:#FDC101;">brush</i>웹툰</th>
+                                    <td><i class="material-icons">visibility</i>12151</td>
+                                    <td>1,000,000만</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+                <div class="serialize">
+                    <div class="title-area-dash">
+                        <h3>연재 작품</h3>
+                    </div>
+                    <div class="count-list-1">
+                        <table class="count-table">
+                            <colgroup>
+                                <col width="30%">
+                                <col width="40%">
+                                <col width="30%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <i class="material-icons" style="color:#013DFD;">edit</i>웹소설
+                                    </th>
+                                    <td><i class="material-icons">visibility</i>150215432</td>
+                                    <td>512작품</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="material-icons" style="color:#FDC101;">brush</i>웹툰</th>
+                                    <td><i class="material-icons">visibility</i>12151</td>
+                                    <td>215작품</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+                <div class="finish">
+                    <div class="title-area-dash">
+                        <h3>완결 작품</h3>
+                    </div>
+                    <div class="count-list-1">
+                        <table class="count-table">
+                            <colgroup>
+                                <col width="30%">
+                                <col width="40%">
+                                <col width="30%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <i class="material-icons" style="color:#013DFD;">edit</i>웹소설
+                                    </th>
+                                    <td><i class="material-icons">visibility</i>154315482</td>
+                                    <td>1,001작품</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="material-icons" style="color:#FDC101;">brush</i>웹툰</th>
+                                    <td><i class="material-icons">visibility</i>121154</td>
+                                    <td>1,000작품</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+                <div class="rank">
+                    <div class="title-area-dash">
+                        <h3>월별 유료 작품 구매 순위</h3>
+                    </div>
+                    <div class="table-area-dash">
+                        <table class="dash-table">
+                            <colgroup>
+                                <col width="5%">
+                                <col width="15%">
+                                <col width="50%">
+                                <col width="10%">
+                                <col width="10%">
+                                <col width="10%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>작가</th>
+                                    <th>제목</th>
+                                    <th>장르</th>
+                                    <th>연재시작</th>
+                                    <th>조회</th>
+                                    <th>유료구매</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>리노,윤슬</td>
+                                    <td><a href="#">황제의 외동딸</a></td>
+                                    <td>웹툰</td>
+                                    <td>2020.01.23</td>
+                                    <td>4,178,455</td>
+                                    <td>3,154,872</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>박경란</td>
+                                    <td><a href="#">이미테이션</a></td>
+                                    <td>웹툰</td>
+                                    <td>2014.09.30</td>
+                                    <td>3,747,495</td>
+                                    <td>2,150,154</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>현군 외3</td>
+                                    <td><a href="#">나 혼자만 레벨업</a></td>
+                                    <td>웹툰</td>
+                                    <td>2018.04.13</td>
+                                    <td>3,025,408</td>
+                                    <td>2,015,421</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>박새날</td>
+                                    <td><a href="#">템빨</a></td>
+                                    <td>웹소설</td>
+                                    <td>2014.12.08</td>
+                                    <td>2,491,609</td>
+                                    <td>2,000,154</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>팀 아도니스 외3</td>
+                                    <td><a href="#">아도니스</a></td>
+                                    <td>웹툰</td>
+                                    <td>2020.01.10</td>
+                                    <td>2,275,767</td>
+                                    <td>1,984,401</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>고래,밀차</td>
+                                    <td><a href="#">그녀가 공작저로 가야 했던 사정</a></td>
+                                    <td>웹툰</td>
+                                    <td>2017,09.03</td>
+                                    <td>1,904,459</td>
+                                    <td>1,647,236</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>코튼 시아</td>
+                                    <td><a href="#">나는 이집아이</a></td>
+                                    <td>웹툰</td>
+                                    <td>2018.07.01</td>
+                                    <td>1,884,273</td>
+                                    <td>1,457,244</td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>황제펭귄</td>
+                                    <td><a href="#">검술명가 막내아들</a></td>
+                                    <td>웹소설</td>
+                                    <td>2019.02.22</td>
+                                    <td>1,426,045</td>
+                                    <td>1,124,244</td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>월백</td>
+                                    <td><a href="#">마존현세강림기</a></td>
+                                    <td>웹소설</td>
+                                    <td>2016.07.12</td>
+                                    <td>1,307,869</td>
+                                    <td>1,048,457</td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>비야, 달슬</td>
+                                    <td><a href="#">악당의 아빠를 꼬셔라</a></td>
+                                    <td>웹툰</td>
+                                    <td>2020.04.01</td>
+                                    <td>1,053,394</td>
+                                    <td>912,221</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="penalty">
+                    <div class="title-area-dash">
+                        <h3>패널티</h3>
+                    </div>
+                    <div class="count-list-2">
+                        <h5>지적재산권 침해</h5>
+                        <table class="penalty-table">
+                            <colgroup>
+                                <col width="30%">
+                                <col width="40%">
+                                <col width="30%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <i class="material-icons" style="color:#013DFD;">edit</i>웹소설
+                                    </th>
+
+                                    <td>1,001작품</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="material-icons" style="color:#FDC101;">brush</i>웹툰</th>
+
+                                    <td>1,000작품</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                        <h5>업로드 규정 위반</h5>
+                        <table class="penalty-table">
+                            <colgroup>
+                                <col width="30%">
+                                <col width="40%">
+                                <col width="30%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <i class="material-icons" style="color:#013DFD;">edit</i>웹소설
+                                    </th>
+
+                                    <td>1,001건</td>
+                                </tr>
+                                <tr>
+                                    <th><i class="material-icons" style="color:#FDC101;">brush</i>웹툰</th>
+
+                                    <td>1,000건</td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+                        <h5>플랫폼 규정 위반</h5>
+                        <table class="penalty-table">
+                            <colgroup>
+                                <col width="30%">
+                                <col width="40%">
+                                <col width="30%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>
+
+                                    </th>
+
+                                    <td>1,001건</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+                <div class="live-comment">
+                    <div class="title-area-dash">
+                        <h3>실시간 댓글</h3>
+                    </div>
+                    <div class="count-list-2">
+                        <div class="comment-item">
+                            <div class="review-img">
+                                <img src="https://news.kbs.co.kr/data/news/2018/03/08/3615894_XCr.jpg" alt="">
+                            </div>
+                            <div class="review-comment">
+                                <dl>
+                                    <dt><span>루주빠</span><span>3분전</span></dt>
+                                    <dd>ㅋㅋㅋㅋ 그 계약서 이상해보이는게 맞아 ㅋㅋㅋzzzzzzzzzzzzzzzzzzzsfasdj;flkaj;sdlfkja;slkdjf;akasdfasdfasdflj|</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="comment-item">
+                            <div class="review-img">
+                                <img src="https://news.kbs.co.kr/data/news/2018/03/08/3615894_XCr.jpg" alt="">
+                            </div>
+                            <div class="review-comment">
+                                <dl>
+                                    <dt><span>루주빠</span><span>3분전</span></dt>
+                                    <dd>ㅋㅋㅋㅋ 그 계약서 이상해보이는게 맞아 ㅋㅋㅋzzzzzzzzzzzzzzzzzzzsfasdj;flkaj;sdlfkja;slkdjf;akasdfasdfasdflj|</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="comment-item">
+                            <div class="review-img">
+                                <img src="https://news.kbs.co.kr/data/news/2018/03/08/3615894_XCr.jpg" alt="">
+                            </div>
+                            <div class="review-comment">
+                                <dl>
+                                    <dt><span>루주빠</span><span>3분전</span></dt>
+                                    <dd>ㅋㅋㅋㅋ 그 계약서 이상해보이는게 맞아 ㅋㅋㅋzzzzzzzzzzzzzzzzzzzsfasdj;flkaj;sdlfkja;slkdjf;akasdfasdfasdflj|</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="comment-item">
+                            <div class="review-img">
+                                <img src="https://news.kbs.co.kr/data/news/2018/03/08/3615894_XCr.jpg" alt="">
+                            </div>
+                            <div class="review-comment">
+                                <dl>
+                                    <dt><span>루주빠</span><span>3분전</span></dt>
+                                    <dd>ㅋㅋㅋㅋ 그 계약서 이상해보이는게 맞아 ㅋㅋㅋzzzzzzzzzzzzzzzzzzzsfasdj;flkaj;sdlfkja;slkdjf;akasdfasdfasdflj|</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="comment-item">
+                            <div class="review-img">
+                                <img src="https://news.kbs.co.kr/data/news/2018/03/08/3615894_XCr.jpg" alt="">
+                            </div>
+                            <div class="review-comment">
+                                <dl>
+                                    <dt><span>루주빠</span><span>3분전</span></dt>
+                                    <dd>ㅋㅋㅋㅋ 그 계약서 이상해보이는게 맞아 ㅋㅋㅋzzzzzzzzzzzzzzzzzzzsfasdj;flkaj;sdlfkja;slkdjf;akasdfasdfasdflj|</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <script>
+            var ctx = document.getElementById('myChart');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    datasets: [{
+                        label: '웹툰',
+                        data: [10000, 500000, 300000, 100000, 100000, 500000, 150000, 150000, 150000, 20000, 30000, 30000],
+                        backgroundColor: [
+                            'rgba(253, 193, 1, 0.5)',
+                            'rgba(253, 193, 1, 0.5)',
+                            'rgba(253, 193, 1, 0.5)',
+                            'rgba(253, 193, 1, 0.5)',
+                            'rgba(253, 193, 1, 0.5)',
+                            'rgba(253, 193, 1, 0.5)',
+                            'rgba(253, 193, 1, 0.5)',
+                            'rgba(253, 193, 1, 0.5)',
+                            'rgba(253, 193, 1, 0.5)',
+                            'rgba(253, 193, 1, 0.5)',
+                            'rgba(253, 193, 1, 0.5)',
+                            'rgba(253, 193, 1, 0.5)',
+                        ],
+                        // this dataset is drawn below
+                        order: 1
+                    }, {
+                        label: '웹소설',
+                        data: [150000, 150000, 20000, 30000, 30000, 40000, 20000, 500000, 300000, 40000, 5000, 100000],
+                        backgroundColor: [
+                            'rgba(1, 61, 253, 0.5)',
+                            'rgba(1, 61, 253, 0.5)',
+                            'rgba(1, 61, 253, 0.5)',
+                            'rgba(1, 61, 253, 0.5)',
+                            'rgba(1, 61, 253, 0.5)',
+                            'rgba(1, 61, 253, 0.5)',
+                            'rgba(1, 61, 253, 0.5)',
+                            'rgba(1, 61, 253, 0.5)',
+                            'rgba(1, 61, 253, 0.5)',
+                            'rgba(1, 61, 253, 0.5)',
+                            'rgba(1, 61, 253, 0.5)',
+                            'rgba(1, 61, 253, 0.5)',
+
+                        ],
+
+                        type: 'line',
+                        // this dataset is drawn on top
+                        order: 2
+                    }],
+                    labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
+
+</body>
+
+</html>
