@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scals=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Studio. D</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="sub-head-line">
+            <div class="container">
+                <!--메뉴-->
+                <div class="header">
+                    <div class="logo">
+                        <h1>
+                            <a href="index.html"><img src="images/logo-m-sub.png" alt="studio.D"></a>
+                        </h1>
+                    </div>
+                    <div id="myNav" class="m-nav overlay">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="images/close_btn.png" alt="닫기"></a>
+                        <ul class="overlay-content">
+                            <li>
+                                <a href="aubout.html">Studio.D</a>
+                            </li>
+                            <li>
+                                <a href="service.html">SERVICE</a>
+                            </li>
+                            <li>
+                                <a href="project-list.html">PROJECTS</a>
+                            </li>
+                            <li>
+                                <a href="map.html">CONTACT</a>
+                            </li>
+                        </ul>
+                        <div class="m-nav-foot">
+                            <p>대전광역시 서구 시청로 1. 3층 Studio.D<br> hollo@studio_D.co <br> 024-123-3457 </p>
+                            <p>Copyright 2020 ⓒ Studio. D</p>
+                        </div>
+                    </div>
+                    <div class="nav-btn-m">
+                        <span onclick="openNav()"><img src="images/icon-nav-sub.png" alt="메뉴"></span>
+                    </div>
+                    <div class="nav-p">
+                        <ul>
+                            <li>
+                                <a href="aubout.html">Studio.D</a>
+                            </li>
+                            <li>
+                                <a href="service.html">SERVICE</a>
+                            </li>
+                            <li>
+                                <a href="project-list.html">PROJECTS</a>
+                            </li>
+                            <li>
+                                <a href="map.html">CONTACT</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--프로젝트 리스트-->
+        <div class="container">
+            <div class="sub-project">
+                <h3>PROJECTS</h3>
+                <div id="myBtnContainer">
+                    <button class="btnP active" onclick="filterSelection('all')"> 전체</button>
+                    <button class="btnP" onclick="filterSelection('housing')"> 주거공간</button>
+                    <button class="btnP" onclick="filterSelection('business')"> 상업공간</button>
+
+                </div>
+
+                <div class="container-f">
+                    <div class="filterDiv housing">
+                        <div class="list-img"><img src="images/project-img-01.png" alt="Triplehouse"></div>
+                        <h5><a href="#">Triplehouse</a></h5>
+                    </div>
+                    <div class="filterDiv business">
+                        <div class="list-img"><img src="images/project-img-02.png" alt="풀먼 파리 투르 에펠"></div>
+                        <h5><a href="#">풀먼 파리 투르 에펠</a></h5>
+
+                    </div>
+                    <div class="filterDiv business">
+                        <div class="list-img"><img src="images/project-img-03.png" alt="르 메르디앙 에투알"></div>
+                        <h5><a href="#">르 메르디앙 에투알</a></h5>
+
+                    </div>
+                    <div class="filterDiv housing">
+                        <div class="list-img"><img src="images/project-img-04.png" alt="코트야드 하우스"></div>
+                        <h5><a href="#">코트야드 하우스</a></h5>
+
+                    </div>
+                    <div class="filterDiv housing">
+                        <div class="list-img"><img src="images/project-img-05.png" alt="프라임 테라스"></div>
+                        <h5><a href="#">프라임 테라스</a></h5>
+
+                    </div>
+                    <div class="filterDiv housing">
+                        <div class="list-img"><img src="images/project-img-06.png" alt="클래시 홈"></div>
+                        <h5><a href="#">클래시 홈</a></h5>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--footer-->
+        <div class="footer">
+            <div class="container">
+                <div class="footer-logo">
+                    <h2>
+                        <a href="index.html"><img src="images/footer-logo.png" alt="studio-d"></a>
+                    </h2>
+                </div>
+                <div class="add">
+                    <p>대전광역시 서구 시청로 1. 3층 Studio.D | hollo@studio_D.co | 024-123-3457 </p>
+
+                </div>
+                <p class="copy">Copyright 2020 ⓒ Studio. D</p>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <!-- 모바일메뉴-->
+    <script>
+        /* Open */
+        function openNav() {
+            document.getElementById("myNav").style.height = "100%";
+        }
+
+        /* Close */
+        function closeNav() {
+            document.getElementById("myNav").style.height = "0%";
+        }
+    </script>
+    <!--필터-->
+    <script>
+        filterSelection("all")
+
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("filterDiv");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                }
+            }
+        }
+
+        function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btnP");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+
+
+</body>
+
+</html>
