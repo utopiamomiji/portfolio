@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <title>lee bora</title>
+</head>
+
+<body>
+    <div class="warp">
+        <div class="header">
+            <div class="container">
+                <div class="logo">
+                    <h1><a href="index.html" class="logo-type">B</a></h1>
+                </div>
+                <div class="nav">
+                    <ul class="pc-nav">
+                        <li><a href="about.html">about me</a></li>
+                        <li><a href="portfolio.html">portfolio</a></li>
+                    </ul>
+                    <div class="nav-hidden">
+                        <div id="mySidenav" class="sidenav">
+                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                            <a href="about.html">about me</a>
+                            <a href="portfolio.html">portfolio</a>
+
+                        </div>
+                        <span style="font-size:30px;cursor:pointer;color:#5c4887;" onclick="openNav()">&#9776; </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="view-box bg-c">
+            <div class="container">
+                <h3>정철교육 ELIKIZ</h3>
+                <p style="display: none;">브로슈어 정철교육</p>
+                <div class="cont-box ">
+                    <div class="img-box"><img src="../images/e-01-elikiz.png" alt="엘리키즈"></div>
+                    <p></p>
+                    <div class="img-box"><img src="../images/e-01-elikiz-2.png" alt="엘리키즈"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <p>Copyright(c) Since 2020 bora.lee </p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+</body>
+
+</html>

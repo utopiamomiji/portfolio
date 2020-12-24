@@ -1,0 +1,310 @@
+/*폰트*/
+
+@font-face {
+    font-family: 'NEXONFootballGothicBA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXONFootballGothicBA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200;300;400;500;600;700&display=swap');
+
+/*공통*/
+
+body {
+    font-family: 'Noto Sans KR', sans-serif, 'Noto Serif KR', serif;
+    font-size: 16px;
+}
+
+.warp {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+
+/*헤드*/
+
+.header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+}
+
+.logo {
+    width: 20%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.logo>h1>a {
+    font-family: NEXONFootballGothicBA1;
+    font-size: 40px;
+    color: #5C4887;
+}
+
+.nav {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav>ul.pc-nav {
+    display: none;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align: center;
+}
+
+.sidenav a {
+    padding: 25px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    transition: 0.3s;
+    text-transform: uppercase;
+    color: #717171;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.sidenav a:hover {
+    color: #5c4887;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.container {
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+
+/*비주얼*/
+
+.visual {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.visual>.container>p {
+    line-height: 200%;
+    font-size: 143.8%;
+    color: #3f3f3f;
+    font-weight: 600;
+}
+
+
+/*list*/
+
+.main-list {
+    width: 100%;
+    display: flex;
+    height: auto;
+}
+
+.portfolio-list {
+    width: 100%;
+    height: auto;
+}
+
+.portfolio {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.item-box {
+    width: 100%;
+}
+
+.item-box>img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgb(27, 6, 39);
+    overflow: hidden;
+}
+
+.item-box:hover .overlay {
+    opacity: 0.8;
+}
+
+.text {
+    font-color: #FAF6FC;
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+}
+
+p.type-text {
+    padding-bottom: 20px;
+    color: #faf6fc;
+    font-size: 93.8%;
+}
+
+span.under-line {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #faf6fc;
+}
+
+p.title-text {
+    padding-top: 20px;
+    color: #faf6fc;
+    font-size: 150%;
+    font-weight: 700;
+}
+
+
+/*footer*/
+
+.footer {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.footer>.container>p {
+    font-size: 81.3%;
+    text-align: right;
+}
+
+
+/*뷰어*/
+
+.view-box {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.bg-c::before {
+    width: 100%;
+    position: absolute;
+    top: 60%;
+    height: 50%;
+    content: "";
+    z-index: -5;
+    background: linear-gradient(to bottom, #faf6fc 0%, #ffffff 100%);
+}
+
+.view-box>.container>h3 {
+    font-weight: 700;
+    color: #111;
+    font-size: 200%;
+    line-height: 200%;
+}
+
+.view-box>.container>p {
+    line-height: 200%;
+}
+
+.cont-box {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.cont-box>.img-box {
+    text-align: center;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.cont-box>.img-box>img {
+    width: 100%;
+}
+
+
+/*테블릿*/
+
+@media all and (min-width:768px) {
+    .nav>ul.pc-nav {
+        display: block;
+    }
+    .nav>ul.pc-nav>li {
+        float: left;
+        margin-left: 20px;
+    }
+    .nav>ul.pc-nav>li>a {
+        font-size: 93.8%;
+        color: #717171;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    .nav>ul.pc-nav>li>a:hover {
+        color: #5C4887;
+        font-weight: 700;
+        transition: .2s ease;
+    }
+    .nav-hidden {
+        display: none;
+    }
+    .portfolio-list {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .portfolio {
+        width: 49% !important;
+    }
+}
+
+
+/*PC*/
+
+@media all and (min-width:1024px) {
+    .header {
+        height: 140px;
+    }
+    .logo>h1 {
+        padding-left: 0;
+    }
+    .container {
+        width: 1024px;
+        margin: 0 auto;
+        padding: 0;
+    }
+}
