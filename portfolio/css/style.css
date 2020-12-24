@@ -255,6 +255,18 @@ p.title-text {
     width: 100%;
 }
 
+.cont-box>p>a.link_btn {
+    padding: 8px 10px;
+    color: #5c4887;
+    border: 1px solid #5c4887;
+    border-radius: 5px;
+}
+
+.cont-box>p>a.link_btn:hover {
+    background-color: #5c4887;
+    color: #fff;
+}
+
 
 /*테블릿*/
 
