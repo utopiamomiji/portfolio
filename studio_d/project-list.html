@@ -64,57 +64,49 @@
                 </div>
             </div>
         </div>
-
         <!--프로젝트 리스트-->
         <div class="container">
-            <div class="sub-project-view">
-                <div class="project-num">
-                    <p>Projects No.13</p>
+            <div class="sub-project">
+                <h3>PROJECTS</h3>
+                <div id="myBtnContainer">
+                    <button class="btnP active" onclick="filterSelection('all')"> 전체</button>
+                    <button class="btnP" onclick="filterSelection('housing')"> 주거공간</button>
+                    <button class="btnP" onclick="filterSelection('business')"> 상업공간</button>
+
                 </div>
-                <div class="view-title-img">
-                    <img src="images/project-img-01.png" alt="triplehouse">
-                </div>
-                <h3>Triplehouse</h3>
-                <p>한 집에서 3가구의 가족(부모님, 형네 가족, 동생네 가족)이 모여 산다는 것은 생각보다 쉽지 않다. 아무리 가족이더라도 나름의 사생활이 보장되면서 소통이 이루어져야 할 것이다. 트리플하우스는 한 집에서 어떻게 3가구의 가족이 모여살지에 대한 결과물의 집이다. 이 집을 통해 3가구의 가족들이 함께 추억을 쌓으며 각각의 행복과 편안함이 가득하길 기대해본다.</p>
-                <dl>
-                    <dd>경기도 김포시 장기동</dd>
-                    <dt>건축면적</dt>
-                    <dd> 123.82㎡ (37.45PY)</dd>
-                    <dt>연면적</dt>
-                    <dd>172.40㎡ (52.15PY)</dd>
-                    <dt>층별면적</dt>
-                    <dd>1층_87.37㎡(26.42PY)<br> 2층_85.03㎡(25.72PY)</dd>
-                    <dt>건축규모</dt>
-                    <dd>지상2층, 다락</dd>
-                    <dt>건축구조</dt>
-                    <dd>목구조</dd>
-                    <dt>주요마감</dt>
-                    <dd>스타코플렉스/아스팔트슁글/탄화목</dd>
-                </dl>
-                <div class="sub-project-view-imglist">
-                    <div class="sub-project-row">
-                        <div class="sub-project-column">
-                            <img src="images/view-sub-07.jpg" style="width:100%" alt="">
-                            <img src="images/view-sub-08.jpg" style="width:100%">
-                            <img src="images/view-sub-05.jpg" style="width:100%">
-                            <img src="images/view-sub-03.jpg" style="width:100%">
 
-                        </div>
-                        <div class="sub-project-column">
-                            <img src="images/view-sub-04.jpg" style="width:100%">
-                            <img src="images/view-sub-06.jpg" style="width:100%">
-                            <img src="images/view-sub-01.jpg" style="width:100%">
-                            <img src="images/view-sub-02.jpg" style="width:100%">
-
-
-                        </div>
+                <div class="container-f">
+                    <div class="filterDiv housing">
+                        <div class="list-img"><img src="images/project-img-01.png" alt="Triplehouse"></div>
+                        <h5><a href="project-view.html">Triplehouse</a></h5>
+                    </div>
+                    <div class="filterDiv business">
+                        <div class="list-img"><img src="images/project-img-02.png" alt="풀먼 파리 투르 에펠"></div>
+                        <h5><a href="project-view.html">풀먼 파리 투르 에펠</a></h5>
 
                     </div>
+                    <div class="filterDiv business">
+                        <div class="list-img"><img src="images/project-img-03.png" alt="르 메르디앙 에투알"></div>
+                        <h5><a href="project-view.html">르 메르디앙 에투알</a></h5>
+
+                    </div>
+                    <div class="filterDiv housing">
+                        <div class="list-img"><img src="images/project-img-04.png" alt="코트야드 하우스"></div>
+                        <h5><a href="project-view.html">코트야드 하우스</a></h5>
+
+                    </div>
+                    <div class="filterDiv housing">
+                        <div class="list-img"><img src="images/project-img-05.png" alt="프라임 테라스"></div>
+                        <h5><a href="project-view.html">프라임 테라스</a></h5>
+
+                    </div>
+                    <div class="filterDiv housing">
+                        <div class="list-img"><img src="images/project-img-06.png" alt="클래시 홈"></div>
+                        <h5><a href="project-view.html">클래시 홈</a></h5>
+
+                    </div>
+
                 </div>
-
-
-
-
             </div>
         </div>
 
@@ -148,6 +140,54 @@
         /* Close */
         function closeNav() {
             document.getElementById("myNav").style.height = "0%";
+        }
+    </script>
+    <!--필터-->
+    <script>
+        filterSelection("all")
+
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("filterDiv");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                }
+            }
+        }
+
+        function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btnP");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
         }
     </script>
 
