@@ -660,7 +660,7 @@
         /*프로젝트 리스트*/
         
         .sub-project {
-            width: 100%;
+           /* width: 100%;*/
             height: auto;
             padding: 6.25vh 5%;
             display: flex;
