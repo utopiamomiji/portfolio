@@ -260,6 +260,7 @@ p.title-text {
     color: #5c4887;
     border: 1px solid #5c4887;
     border-radius: 5px;
+    font-size:93.8%;
 }
 
 .cont-box>p>a.link_btn:hover {
